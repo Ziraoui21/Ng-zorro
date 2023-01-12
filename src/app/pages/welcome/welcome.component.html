@@ -1,0 +1,31 @@
+<div nz-row nzJustify="center">
+    <div nz-col [nzLg]="{ span: 8}" [nzSm]="{ span: 20}" [nzXs]="{ span: 24}">
+        <nz-input-group style="margin-bottom: 15px;" nzAddOnAfterIcon="setting">
+            <input type="text" placeholder="your name" nz-input />
+        </nz-input-group>
+
+        <nz-select style="margin-bottom: 15px;width : 100%;" nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        </nz-select>
+
+        <nz-space [nzSize]="12">
+            <button *nzSpaceItem nz-button nzType="primary" nzShape="round" (click)="notify()">
+                <span nz-icon nzType="save"></span>
+                Save
+            </button>
+            <button *nzSpaceItem nz-button nzShape="round" [nzType]="'primary'" (click)="showModal()">
+                <span>Show Modal</span>
+            </button>
+        </nz-space>
+    </div>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+    <p>Content one</p>
+    <p>Content two</p>
+    <p>Content three</p>
+    </ng-container>
+</nz-modal>
