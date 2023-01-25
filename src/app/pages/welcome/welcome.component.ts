@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
@@ -33,5 +34,12 @@ export class WelcomeComponent implements OnInit {
     console.log('Button cancel clicked!');
     this.isVisible = false;
   }
+
+  disabledDate = (current: Date): boolean =>{
+    // console.log(current + " " + moment().diff(current,'days'));
+    return (moment().diff(current,'days')>0) || (moment(current).day() == 6)
+    || (moment(current).day() == 0);
+  }
+
 
 }

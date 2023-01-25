@@ -10,6 +10,9 @@
             <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
         </nz-select>
 
+        <nz-date-picker style="margin-bottom: 15px;width : 100%;"
+        [nzDisabledDate]="disabledDate"></nz-date-picker>
+
         <nz-space [nzSize]="12">
             <button *nzSpaceItem nz-button nzType="primary" nzShape="round" (click)="notify()">
                 <span nz-icon nzType="save"></span>

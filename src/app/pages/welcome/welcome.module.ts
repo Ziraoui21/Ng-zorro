@@ -7,6 +7,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NgModule } from '@angular/core';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
 
@@ -23,7 +24,8 @@ import { WelcomeComponent } from './welcome.component';
   NzNotificationModule,
   NzModalModule,
   NzSelectModule,
-  NzSpaceModule
+  NzSpaceModule,
+  NzDatePickerModule
 ],
   declarations: [WelcomeComponent],
   exports: [WelcomeComponent]
