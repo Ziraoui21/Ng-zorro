@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { IconsProviderModule } from './../../icons-provider.module';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -8,14 +9,18 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NgModule } from '@angular/core';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzImageModule } from 'ng-zorro-antd/experimental/image';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
 
 import { WelcomeComponent } from './welcome.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  imports: [WelcomeRoutingModule,
+  imports: [
+  CommonModule,
+  WelcomeRoutingModule,
   NzButtonModule,
   IconsProviderModule,
   NzInputModule,
@@ -25,7 +30,9 @@ import { WelcomeComponent } from './welcome.component';
   NzModalModule,
   NzSelectModule,
   NzSpaceModule,
-  NzDatePickerModule
+  NzDatePickerModule,
+  NzImageModule,
+  FormsModule,
 ],
   declarations: [WelcomeComponent],
   exports: [WelcomeComponent]

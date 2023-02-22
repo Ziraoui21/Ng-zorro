@@ -1,19 +1,22 @@
+
+<!-- Grid System By Ng-zorro -->
+
 <div nz-row nzJustify="center">
-    <div nz-col [nzLg]="{ span: 8}" [nzSm]="{ span: 20}" [nzXs]="{ span: 24}">
-        <nz-input-group style="margin-bottom: 15px;" nzAddOnAfterIcon="setting">
-            <input type="text" placeholder="your name" nz-input />
+    <div nz-col [nzLg]="{ span: 8}" [nzSm]="{span: 20}" [nzXs]="{span: 24}">
+        {{selectedDate | date:'dd/MM/YYYY'}}
+        {{selectedValue}}
+        <nz-input-group class="mb-3 d-block" nzAddOnAfterIcon="setting">
+            <input type="text" placeholder="your name" nz-input/>
         </nz-input-group>
 
-        <nz-select style="margin-bottom: 15px;width : 100%;" nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
-            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        <nz-select class="mb-3 d-block" [(ngModel)]="selectedValue" nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+            <nz-option *ngFor="let post of posts" [nzLabel]="post.title" [nzValue]="post.id"></nz-option>
         </nz-select>
 
-        <nz-date-picker style="margin-bottom: 15px;width : 100%;"
+        <nz-date-picker [(ngModel)]="selectedDate" class="mb-3 d-block"
         [nzDisabledDate]="disabledDate"></nz-date-picker>
 
-        <nz-space [nzSize]="12">
+        <nz-space [nzSize]="12" style="margin-bottom: 20px;">
             <button *nzSpaceItem nz-button nzType="primary" nzShape="round" (click)="notify()">
                 <span nz-icon nzType="save"></span>
                 Save
@@ -22,6 +25,8 @@
                 <span>Show Modal</span>
             </button>
         </nz-space>
+
+        <nz-image class="d-block" nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" nzWidth="200" nzHeight="200"></nz-image>
     </div>
 </div>
 
@@ -32,3 +37,22 @@
     <p>Content three</p>
     </ng-container>
 </nz-modal>
+
+<!-- Grid System By Bootstrap -->
+
+<!--div class="conatiner">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <nz-input-group nzAddOnAfterIcon="setting" class="mb-3">
+                <input type="text" placeholder="your name" nz-input/>
+            </nz-input-group>
+
+            <nz-select class="mb-3 d-block" [(ngModel)]="selectedValue" nzShowSearch nzAllowClear nzPlaceHolder="Select a person">
+                <nz-option *ngFor="let post of posts" [nzLabel]="post.title" [nzValue]="post.id"></nz-option>
+            </nz-select>
+
+            <nz-date-picker [(ngModel)]="selectedDate" class="mb-3 d-block"
+            [nzDisabledDate]="disabledDate"></nz-date-picker>
+        </div>
+    </div>
+</div!-->

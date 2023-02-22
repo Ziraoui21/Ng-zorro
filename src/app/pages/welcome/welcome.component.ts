@@ -1,6 +1,8 @@
+import { PostService } from './../../API/post.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { Post } from 'src/app/Model/Post';
 
 @Component({
   selector: 'app-welcome',
@@ -10,10 +12,16 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 export class WelcomeComponent implements OnInit {
 
   isVisible = false;
+  selectedDate !: Date;
+  selectedValue !: number;
+  posts !: Post[];
 
-  constructor(private notif : NzNotificationService) { }
+  constructor(private notif : NzNotificationService,private api : PostService) { }
 
   ngOnInit() {
+    this.api.getPost().subscribe((data)=>{
+        this.posts = data;
+    });
   }
 
   notify()
@@ -37,9 +45,9 @@ export class WelcomeComponent implements OnInit {
 
   disabledDate = (current: Date): boolean =>{
     // console.log(current + " " + moment().diff(current,'days'));
+    // console.log(current.toLocaleDateString() + ' ' + new Date().toLocaleDateString())
     return (moment().diff(current,'days')>0) || (moment(current).day() == 6)
-    || (moment(current).day() == 0);
+    || (moment(current).day() == 0); 
   }
-
 
 }

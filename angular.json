@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "e9fdaf86-f2fb-4d89-b0e8-c85853a106c2"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -32,6 +35,7 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/theme.less",
               "src/styles.css"
